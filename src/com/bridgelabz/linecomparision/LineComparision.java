@@ -11,7 +11,8 @@ public class LineComparision
 		System.out.println("The Length os line 1 is :"+resultOfLine[0]+"\nThe Length of line 2 is :"+resultOfLine[1]);
 		Double resultOfLine1 = new Double(resultOfLine[0]);
 		Double resultOfLine2 = new Double(resultOfLine[1]);
-		checkLineEquality(resultOfLine1, resultOfLine2);
+		double check = resultOfLine1.compareTo(resultOfLine2);
+		compareGreaterOrLessOrEqual(check);
 	}
 	public static double[] calculateLineLength() 
 	{
@@ -19,15 +20,19 @@ public class LineComparision
 		double LengthOfLine2 = Math.sqrt((Line2x2-Line2x1)*(Line2x2-Line2x1) + (Line2y2-Line2y1)*(Line2y2-Line2y1));
 		return new double[] {LengthOfLine1,LengthOfLine2};
 	}
-	public static void checkLineEquality(Object line1,Object line2)
+	public static void compareGreaterOrLessOrEqual(double value) 
 	{
-		if(line1.equals(line2))
+		if(value > 0)
         {
-        	System.out.println("Both lines are equal");
+        	System.out.println("line 1 is greater than line 2 ");
+        }
+        else if (value < 0)
+        {
+        	System.out.println("line 1 is less than line 2 ");
         }
         else
         {
-        	System.out.println("Both lines are different");
+        	System.out.println("line 1 is equal to line 2");
         }
 	}
 }
